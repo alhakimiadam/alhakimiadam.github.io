@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rhino's Kitchen | Menú Digital</title>
+  
+  <!-- Vinculación del archivo CSS separado en la carpeta css -->
+  <link rel="stylesheet" href="css/main.css">
+  
+  <!-- Fuente moderna de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ==================== ENCABEZADO / HERO ==================== -->
+  <header class="hero-header">
+    <div class="brand-container">
+      <div class="logo-box">
+        <!-- Reemplaza con la ruta de tu logo en la carpeta media/fotos -->
+        <img src="media/fotos/logo.png" alt="Rhino's Kitchen Logo" class="brand-logo" onerror="this.style.display='none'">
+        <h1 class="brand-title">RHINO'S <span>KITCHEN</span></h1>
+      </div>
+      <p class="brand-slogan">Sabor salvaje, calidad insuperable 🔥</p>
+    </div>
+
+    <!-- Barra de estado rápido: Horarios / Local -->
+    <div class="status-bar">
+      <span class="status-indicator active"></span> Abierto hoy hasta las 11:00 PM
+    </div>
+  </header>
+
+  <!-- ==================== FILTRO POR CATEGORÍAS ==================== -->
+  <nav class="categories-nav" aria-label="Categorías del menú">
+    <button class="filter-btn active" data-category="todos">🔥 Todos</button>
+    <button class="filter-btn" data-category="hamburguesas">Burgers</button>
+    <button class="filter-btn" data-category="pollo">Pollo Crujiente</button>
+    <button class="filter-btn" data-category="combos">Combos</button>
+    <button class="filter-btn" data-category="bebidas">Bebidas</button>
+  </nav>
+
+  <!-- ==================== LISTA DE PRODUCTOS ==================== -->
+  <main class="menu-container">
+
+    <!-- Tarjeta 1: Producto con Video en Bucle -->
+    <article class="menu-card" data-category="hamburguesas">
+      <div class="media-wrapper">
+        <span class="badge best-seller">Más Pedido ⭐</span>
+        <!-- Video interactivo optimizado para celular -->
+        <video class="card-video" autoplay muted loop playsinline poster="media/fotos/burger-promo.jpg">
+          <source src="media/videos/burger-promo.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="card-body">
+        <div class="card-header">
+          <h2 class="item-name">Rhino Doble Smash</h2>
+          <span class="item-price">$8.50</span>
+        </div>
+        <p class="item-description">Doble carne madurada smash, queso cheddar americano fundido, tocineta crujiente y salsa secreta de la casa en pan brioche artesanal.</p>
+        <button class="btn-order" onclick="agregarAlPedido('Rhino Doble Smash', 8.50)">
+          <span>Ordenar</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        </button>
+      </div>
+    </article>
+
+    <!-- Tarjeta 2: Producto con Imagen -->
+    <article class="menu-card" data-category="pollo">
+      <div class="media-wrapper">
+        <span class="badge spicy">Extra Crujiente 🔥</span>
+        <img src="media/fotos/crispy-strips.jpg" alt="Tiras de pollo crujiente" class="card-img" loading="lazy">
+      </div>
+      <div class="card-body">
+        <div class="card-header">
+          <h2 class="item-name">Crispy Chicken Tenders</h2>
+          <span class="item-price">$7.00</span>
+        </div>
+        <p class="item-description">Tiras de pechuga fresca maceradas en especias, con doble rebozado extra crujiente. Acompañadas de salsa BBQ dulce o mostaza miel.</p>
+        <button class="btn-order" onclick="agregarAlPedido('Crispy Chicken Tenders', 7.00)">
+          <span>Ordenar</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        </button>
+      </div>
+    </article>
+
+    <!-- Tarjeta 3: Combo -->
+    <article class="menu-card" data-category="combos">
+      <div class="media-wrapper">
+        <img src="media/fotos/combo-familiar.jpg" alt="Combo Familiar" class="card-img" loading="lazy">
+      </div>
+      <div class="card-body">
+        <div class="card-header">
+          <h2 class="item-name">Mega Rhino Combo</h2>
+          <span class="item-price">$18.00</span>
+        </div>
+        <p class="item-description">2 Hamburguesas clásicas + 4 Piezas de pollo crujiente + Papas rústicas grandes + 2 Refrescos de 500ml.</p>
+        <button class="btn-order" onclick="agregarAlPedido('Mega Rhino Combo', 18.00)">
+          <span>Ordenar</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        </button>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- ==================== BOTÓN FLOTANTE DE PEDIDO / WHATSAPP ==================== -->
+  <aside class="floating-cart" id="floatingCart">
+    <div class="cart-summary">
+      <span class="cart-count" id="cartCount">0</span>
+      <div class="cart-text">
+        <small>Total estimado</small>
+        <strong id="cartTotal">$0.00</strong>
+      </div>
+    </div>
+    <a href="#" id="whatsappCheckout" class="btn-checkout" target="_blank">
+      Pedir por WhatsApp 
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+    </a>
+  </aside>
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <script src="js/main.js"></script>
+</body>
+</html>
